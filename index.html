@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f2a1d'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%2314b856'/%3E%3C/svg%3E">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0f2a1d">
+  <title>Mobix — Verkoop je iPhone</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 4h2l2.5 11h10L20 7H6"/><circle cx="9" cy="20" r="1.3"/><circle cx="17" cy="20" r="1.3"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+  </defs></svg>
+
+  <div id="homePage">
+    <div class="utility-bar">
+      <div class="utility-left">
+        <span><svg class="ico"><use href="#i-shield"/></svg>2 jaar garantie</span><span><svg class="ico"><use href="#i-check"/></svg>Getest op 50 punten</span><span><svg class="ico"><use href="#i-check"/></svg>Gratis screenprotector</span>
+      </div>
+      <div class="utility-right"><span>Klantenservice</span><span>Wat is refurbished?</span><span>Klantscore 9.1</span><span>Thuiswinkel Waarborg</span></div>
+    </div>
+
+    <header class="site-header">
+      <a class="logo" href="#">m<span>o</span>bix</a>
+      <label class="search"><svg class="ico"><use href="#i-search"/></svg><input placeholder="Zoeken" aria-label="Zoeken"></label>
+      <div class="header-icons"><a href="login.html" aria-label="Account"><svg class="ico"><use href="#i-user"/></svg></a><a href="#" aria-label="Winkelwagen"><svg class="ico"><use href="#i-cart"/></svg></a></div>
+    </header>
+
+    <nav class="nav-bar">
+      <a href="#">iPhone</a><a href="#">iPad</a><a href="accessoires.html">Accessoires</a><a class="active" href="#deals">Beste deals</a><a href="#help">Keuzehulp</a><a class="sell-link" href="#" id="navSell">Verkopen</a>
+    </nav>
+
+    <main class="home-main">
+      <section class="hero">
+        <div>
+          <h1>Weet in een paar minuten wat je iPhone waard is</h1>
+          <p>Beantwoord een paar vragen over je toestel en zie direct je geschatte prijs. Verkopen doe je in de winkel of via de post.</p>
+          <a class="btn" href="#deals">Start je inruil <svg class="ico"><use href="#i-arrow"/></svg></a>
+          <div class="hero-points"><span><svg class="ico"><use href="#i-check"/></svg>Gratis verzending</span><span><svg class="ico"><use href="#i-check"/></svg>Veilige gegevensverwijdering</span></div>
+        </div>
+        <div class="quote" aria-hidden="true">
+          <small>Voorbeeld van een schatting</small>
+          <b>iPhone 15 Pro · 256 GB</b>
+          <div class="quote-price" id="quotePrice">€ 330,00</div>
+          <dl><div><dt>Batterij</dt><dd>92%</dd></div><div><dt>Scherm</dt><dd>Geen gebruikssporen</dd></div><div><dt>Geldig</dt><dd>14 dagen</dd></div></dl>
+        </div>
+      </section>
+
+      <section class="model-section" id="deals">
+        <h2>Welke iPhone wil je verkopen?</h2>
+        <p class="section-sub">Kies je model en zie direct wat je ervoor krijgt.</p>
+        <label class="model-search"><svg class="ico"><use href="#i-search"/></svg><input id="modelSearch" placeholder="Zoek op model, bijv. iPhone 14" aria-label="Zoek op model"></label>
+        <div class="model-grid" id="modelGrid"></div>
+      </section>
+      <section class="worth" id="help">
+        <img src="images/waarde-berekenen.webp" alt="Een iPhone met een foto-app op het scherm" loading="lazy">
+        <div>
+          <h2>Hoe wordt de waarde berekend?</h2>
+          <p class="section-sub">Je prijs begint bij het model en de opslag. Daarna kijken we naar de staat van je toestel.</p>
+          <ul class="factors">
+            <li><b>Model en opslag</b><span>Nieuwere modellen en meer opslag leveren meer op.</span></li>
+            <li><b>Batterijconditie</b><span>Onder de 90% gaat er iets af, onder de 80% meer.</span></li>
+            <li><b>Functies</b><span>Werkt er iets niet, dan telt dat mee in de prijs.</span></li>
+            <li><b>Scherm en behuizing</b><span>Barsten, krassen en slijtage verlagen de prijs.</span></li>
+          </ul>
+          <p class="fine">Dit is een schatting. Je definitieve prijs hoor je na controle van je toestel.</p>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="pay"><span>Veilig betalen</span>
+        <img src="images/betalen/ideal-wero.png" alt="iDEAL | Wero"><img src="images/betalen/bancontact.png" alt="Bancontact"><img src="images/betalen/mastercard.png" alt="Mastercard"><img src="images/betalen/apple-pay-1-1.png" alt="Apple Pay"><img src="images/betalen/google-pay.png" alt="Google Pay"><img src="images/betalen/klarna.png" alt="Klarna"><img src="images/betalen/riverty.png" alt="Riverty">
+      </div>
+      <small>© Mobix</small>
+    </footer>
+  </div>
+
+  <div id="tradePage" class="trade-page" hidden>
+    <header class="topbar"><a class="trade-logo" href="#" id="homeBack">m<span>o</span>bix</a><a href="login.html" class="login-link">Inloggen</a><div class="step-label" id="stepLabel">1/8</div></header>
+    <div class="progress-wrap"><button class="back" id="backBtn" aria-label="Terug">←</button><div class="progress"><div id="progressBar"></div></div><span id="stepLabel2">1/8</span></div>
+    <main class="layout"><aside class="sidebar"><section class="price-card"><span>Geschatte waarde</span><strong id="price">€ 100,00</strong></section><section class="summary-card" id="sideSummary"></section></aside><section class="panel" id="app"></section></main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

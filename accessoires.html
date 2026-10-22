@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f2a1d'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%2314b856'/%3E%3C/svg%3E">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0f2a1d">
+  <title>Accessoires — Mobix</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 4h2l2.5 11h10L20 7H6"/><circle cx="9" cy="20" r="1.3"/><circle cx="17" cy="20" r="1.3"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  </defs></svg>
+
+  <header class="site-header acc-header">
+    <a class="logo" href="index.html">m<span>o</span>bix</a>
+    <div class="header-icons"><a href="login.html" aria-label="Account"><svg class="ico"><use href="#i-user"/></svg></a><a href="#" aria-label="Winkelwagen"><svg class="ico"><use href="#i-cart"/></svg></a></div>
+  </header>
+  <nav class="nav-bar">
+    <a href="index.html">iPhone</a><a href="#">iPad</a><a class="active" href="accessoires.html">Accessoires</a><a href="index.html#deals">Beste deals</a><a href="index.html#help">Keuzehulp</a><a class="sell-link" href="index.html#deals">Verkopen</a>
+  </nav>
+
+  <main class="home-main">
+    <section class="acc-head">
+      <h1>Accessoires</h1>
+      <p class="section-sub">Kabels en opladers om je iPhone snel en veilig op te laden.</p>
+      <div class="chips" role="group" aria-label="Filter op soort">
+        <button class="chip" data-filter="all" aria-pressed="true">Alles</button>
+        <button class="chip" data-filter="usbc" aria-pressed="false">USB-C kabels</button>
+        <button class="chip" data-filter="lightning" aria-pressed="false">Lightning kabels</button>
+        <button class="chip" data-filter="lader" aria-pressed="false">Opladers</button>
+      </div>
+    </section>
+    <div class="acc-grid" id="accGrid"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="pay"><span>Veilig betalen</span>
+      <img src="images/betalen/ideal-wero.png" alt="iDEAL | Wero"><img src="images/betalen/bancontact.png" alt="Bancontact"><img src="images/betalen/mastercard.png" alt="Mastercard"><img src="images/betalen/apple-pay-1-1.png" alt="Apple Pay"><img src="images/betalen/google-pay.png" alt="Google Pay"><img src="images/betalen/klarna.png" alt="Klarna"><img src="images/betalen/riverty.png" alt="Riverty">
+    </div>
+    <small>© Mobix</small>
+  </footer>
+
+<script>
+/* PRIJZEN: voorlopige prijzen, pas ze hier aan (p = prijs in euro). */
+const products=[
+ {n:"USB-C naar USB-C kabel met display",specs:["60W","100 cm","Zwart"],t:"usbc",p:14.95,img:"tuniq-60w-usb-c-display"},
+ {n:"USB-C naar Lightning kabel met display",specs:["27W","100 cm","Grijs"],t:"lightning",p:14.95,img:"tuniq-27w-lightning-display"},
+ {n:"USB-C naar USB-C kabel",specs:["60W","100 cm","Oranje"],t:"usbc",p:12.95,img:"tuniq-60w-usb-c-oranje"},
+ {n:"USB-C naar Lightning kabel",specs:["27W","100 cm","Oranje"],t:"lightning",p:12.95,img:"tuniq-27w-lightning-oranje"},
+ {n:"USB-C naar USB-C kabel",specs:["45W","200 cm","Wit"],t:"usbc",p:12.95,img:"tuniq-usb-c-200cm-wit"},
+ {n:"USB-C naar Lightning kabel",specs:["27W","200 cm","Wit"],t:"lightning",p:12.95,img:"tuniq-lightning-200cm-wit"},
+ {n:"Snellader USB-C (PD)",specs:["25W","1× USB-C","Wit"],t:"lader",p:14.95,img:"tuniq-lader-25w"}
+];
+const euro=n=>"€ "+n.toFixed(2).replace(".",",");
+const grid=document.getElementById("accGrid");
+function render(f){
+  grid.innerHTML=products.filter(x=>f==="all"||x.t===f).map(x=>`<article class="acc-card"><div class="acc-photo"><img src="images/accessoires/${x.img}.webp" alt="TUNIQ ${x.n}, ${x.specs.join(", ")}" loading="lazy"></div><h3>TUNIQ ${x.n}</h3><ul class="specs">${x.specs.map(s=>`<li>${s}</li>`).join("")}</ul><div class="acc-price">${euro(x.p)}</div></article>`).join("");
+}
+document.querySelectorAll(".chip").forEach(b=>b.onclick=()=>{document.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed",c===b));render(b.dataset.filter)});
+render("all");
+</script>
+</body>
+</html>
